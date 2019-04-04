@@ -3,4 +3,4 @@ mysql_server_config:
     - name: /etc/my.cnf.d/server.cnf
     - source: salt://mysql/files/server.cnf 
     -require:
-      - pkg: mariabd-server
+      - pkg: mariadb-server
