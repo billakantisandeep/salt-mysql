@@ -1,4 +1,4 @@
-{% if grains['os_family'] == 'Debian' %}}
+{% if grains['os_family'] == 'Debian' %}
 
 mysql_debconf_install:
   pkg.installed:
