@@ -4,18 +4,18 @@ mysql_debconf_install:
   pkg.installed:
     - name: debconf
 
-mysql_debconf_settings:
-  debconf.set:
-    - name: mysql-server
-    - data: 
-      'mysql-server/root_password': {'type': 'password', 'value': 'temppass' }
-      'mysql_server/root_password_again':{'type': 'password', 'value': 'temppass'}
-    -require:
-      - pkg: debconf
-    - require_in:
-      - mysql_server_install
+ mysql_debconf_settings:
+   debconf.set:
+     - name: mysql-server
+     - data:
+         'mysql-server/root_password': {'type': 'password', 'value': 'temppass'}
+         'mysql-server/root_password_again': {'type': 'password', 'value': 'temppass'}
+     - require:
+       - pkg: debconf
+     - require_in:
+       - mysql_server_install
 
-{% endif %}}
+{% endif %}
 
 
 mysql_server_install:
