@@ -1,3 +1,4 @@
+{% from "mysql/map.jinja" import mysql with context %}
 mysql_restart:
   module.wait:
      - name: service.restart 
